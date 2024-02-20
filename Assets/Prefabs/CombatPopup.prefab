@@ -326,7 +326,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797220967841641247}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -9207193351907675481}
+        m_TargetAssemblyTypeName: CombatPopupSetting, Assembly-CSharp
+        m_MethodName: OnRunBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2069041207059716988
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +806,7 @@ GameObject:
   - component: {fileID: 3694684764660157672}
   - component: {fileID: 4543175908300889482}
   - component: {fileID: 2977019418560813050}
+  - component: {fileID: -9207193351907675481}
   m_Layer: 5
   m_Name: CombatPopup
   m_TagString: Untagged
@@ -864,6 +877,36 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-9207193351907675481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5904951502139622878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd15f19d44664a4da2349defc0fa73c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySlots:
+  - {fileID: 8651083284631463044}
+  - {fileID: 343551138530914965}
+  - {fileID: 4157693862742817137}
+  CardSlots:
+  - {fileID: 4914423165125490732}
+  - {fileID: 3290425143320052180}
+  - {fileID: 7341976682045381048}
+  hpBar: {fileID: 2059230023914868684}
+  mpBar: {fileID: 1183050220589938828}
+  _enemyList:
+  - {fileID: 9149535509178419258, guid: 41f85229d258fdb49b95ae9e2d56eec4, type: 3}
+  _curEnemyList: []
+  _CardList:
+  - {fileID: 4420938163062559209, guid: fdcc9c79f3d437c4b85e66208664a748, type: 3}
+  - {fileID: 4080423814276297039, guid: db04d397cf346eb498e5d61a456fda1a, type: 3}
+  - {fileID: 6530399416115092736, guid: b697c4413a8ccc64e90da5f3ed9abd35, type: 3}
+  _handList: []
 --- !u!1 &7341976682045381048
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,11 +37,7 @@ public class CommonEnemyTopDowncontroller : EnemyTopDownController
         if (collision.gameObject.tag == "Player")
         {
             Instantiate(combatPopup, UI);
-            
-
         }
     }
-
-
 
 }
