@@ -15,7 +15,7 @@ public class EnemyTopDownController : CharacterTopDownController
     protected virtual void Start()
     {
         gameManager = GameManager.Instance;
-        ClosestTarget = gameManager.Player;
+        ClosestTarget = gameManager.Player.transform;
     }
     
     protected virtual void FixedUpdate()
