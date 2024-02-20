@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -8,11 +9,13 @@ public class Movement : MonoBehaviour
 
     private Vector2 _movementDirection = Vector2.zero;
     private Rigidbody2D _rigidbody;
+    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
         _controller = GetComponent<CharacterTopDownController>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Start()
@@ -32,6 +35,14 @@ public class Movement : MonoBehaviour
     {
         dir = dir * 5;
         _rigidbody.velocity = dir;
+        if(dir.x < 0)
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else
+        {
+            _spriteRenderer.flipX=false;
+        }
 
     }
 }

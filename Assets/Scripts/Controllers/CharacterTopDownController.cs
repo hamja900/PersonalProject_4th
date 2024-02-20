@@ -12,8 +12,8 @@ public class CharacterTopDownController : MonoBehaviour
     {
         OnMoveEvent?.Invoke(dir);
     }
-    public void CallLookEvent(Vector2 dir)
-    {
-        OnLookEvent?.Invoke(dir);
-    }
+    //public void CallLookEvent(Vector2 dir)
+    //{
+    //    OnLookEvent?.Invoke(dir);
+    //}
 }
