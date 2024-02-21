@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,17 +11,23 @@ public class CombatPopupSetting : MonoBehaviour
     public GameObject[] CardSlots;
     public Slider hpBar;
     public Slider mpBar;
-    private StatsHandler statsHandler;
+    private StatsHandler _statsHandler;
+    private HealthSystem _healthSystem;
+     
 
     public List<GameObject> _enemyList = new List<GameObject>();
     public List<GameObject> _curEnemyList = new List<GameObject>();
     public List<GameObject> _CardList = new List<GameObject>();
     public List<GameObject> _handList = new List<GameObject>();
 
+    public AttackSO enemyAttackSO;
+    public AttackSO[] cardAttackSO;
+
+
     private void Awake()
     {
-        statsHandler = GetComponent<StatsHandler>();
-
+        _statsHandler = GameManager.Instance.Player.GetComponent<StatsHandler>();
+        _healthSystem = GameManager.Instance.Player.GetComponent<HealthSystem>();
 
     }
     // Start is called before the first frame update
@@ -29,6 +36,9 @@ public class CombatPopupSetting : MonoBehaviour
         ResetPopup();
         RandomGenEnemy();
         RandomGenCard();
+        HpBar();
+        MpBar();
+        PlayerTurn();
     }
 
     private void RandomGenEnemy()
@@ -50,10 +60,8 @@ public class CombatPopupSetting : MonoBehaviour
     {
         while (_handList.Count < 4)
         {
-            for(int i = 0; i< 3; i++)
-            {
-                    _handList[i]=_CardList[Random.Range(0,_CardList.Count-1)];
-            }
+            _handList.Add(_CardList[Random.Range(0, _CardList.Count)]);
+
         }
         for (int j = 0; j < 3; j++)
         {
@@ -65,6 +73,36 @@ public class CombatPopupSetting : MonoBehaviour
     {
         _handList.Clear();
         _curEnemyList.Clear();
+    }
+
+    private void HpBar()
+    {
+        hpBar.value = GameManager.Instance.PlayerCurHp() / _statsHandler.CurrentStats.maxHP;
+    }
+
+    private void MpBar()
+    {
+        mpBar.value = GameManager.Instance.PlayerCurMp() / _statsHandler.CurrentStats.maxMP;
+    }
+
+    public void SkelAttack()
+    {
+        _healthSystem.ChangeHealth(-enemyAttackSO.power);
+    }
+
+    private void PlayerTurn()
+    {
+        EnemyTurn();
+    }
+
+    private void EnemyTurn()
+    {
+        for (int i = 0; i< _curEnemyList.Count; i++)
+        {
+            SkelAttack();
+            HpBar();
+            Thread.Sleep(100);
+        }
     }
 
     public void OnRunBtn()

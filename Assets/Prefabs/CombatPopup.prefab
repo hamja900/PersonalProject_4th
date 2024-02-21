@@ -889,6 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd15f19d44664a4da2349defc0fa73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   enemySlots:
   - {fileID: 8651083284631463044}
   - {fileID: 343551138530914965}
@@ -907,6 +908,9 @@ MonoBehaviour:
   - {fileID: 4080423814276297039, guid: db04d397cf346eb498e5d61a456fda1a, type: 3}
   - {fileID: 6530399416115092736, guid: b697c4413a8ccc64e90da5f3ed9abd35, type: 3}
   _handList: []
+  enemyAttackSO: {fileID: 11400000, guid: aace373a9f8e2344c8c169360d27af2f, type: 2}
+  cardAttackSO:
+  - {fileID: 11400000, guid: 668b1de569d0ce04fbd2a23c533adee1, type: 2}
 --- !u!1 &7341976682045381048
 GameObject:
   m_ObjectHideFlags: 0

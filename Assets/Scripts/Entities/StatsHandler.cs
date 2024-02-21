@@ -23,6 +23,8 @@ public class StatsHandler : MonoBehaviour
         }
         CurrentStats = new CharacterStat { attackSO = attackSO };
         CurrentStats.statsChangedType = baseStats.statsChangedType;
+        CurrentStats.maxHP = baseStats.maxHP;
+        CurrentStats.maxMP = baseStats.maxMP;
         CurrentStats.speed = baseStats.speed;
     }
 

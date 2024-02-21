@@ -5,21 +5,25 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    public HealthSystem healthSystem;
     public GameObject Player;
+    
 
     private void Awake()
     {
         Instance = this;
-    }
-    void Start()
-    {
+        healthSystem = Player.GetComponent<HealthSystem>();
         
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public float PlayerCurHp()
     {
-        
+        float playerCurHP = healthSystem.CurrentHealth;
+        return playerCurHP;
+    }
+    public float PlayerCurMp()
+    {
+        float playerCurMP = healthSystem.CurrentMP;
+        return playerCurMP;
     }
 }

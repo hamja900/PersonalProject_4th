@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b890f3eb49e3a564484242a9c1e598f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthSystem: {fileID: 1719799712}
   Player: {fileID: 1719799704}
 --- !u!4 &256835432
 Transform:
@@ -718,6 +719,8 @@ MonoBehaviour:
   baseStats:
     statsChangedType: 2
     speed: 2
+    maxHP: 0
+    maxMP: 0
     attackSO: {fileID: 11400000, guid: 668b1de569d0ce04fbd2a23c533adee1, type: 2}
   stastsModifier: []
 --- !u!61 &1033046798
@@ -812,6 +815,7 @@ GameObject:
   - component: {fileID: 1719799709}
   - component: {fileID: 1719799708}
   - component: {fileID: 1719799711}
+  - component: {fileID: 1719799712}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -993,8 +997,22 @@ MonoBehaviour:
   baseStats:
     statsChangedType: 2
     speed: 5
+    maxHP: 100
+    maxMP: 20
     attackSO: {fileID: 11400000, guid: 668b1de569d0ce04fbd2a23c533adee1, type: 2}
   stastsModifier: []
+--- !u!114 &1719799712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719799704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8fd11b5463c27542af1e9776dd966f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2036059249
 GameObject:
   m_ObjectHideFlags: 0
