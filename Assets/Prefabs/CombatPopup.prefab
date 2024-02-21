@@ -889,7 +889,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd15f19d44664a4da2349defc0fa73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
   enemySlots:
   - {fileID: 8651083284631463044}
   - {fileID: 343551138530914965}

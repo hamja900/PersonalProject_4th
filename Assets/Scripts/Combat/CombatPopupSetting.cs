@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class CombatPopupSetting : MonoBehaviour
 {
+    public static CombatPopupSetting Instance;
+
     public GameObject[] enemySlots;
     public GameObject[] CardSlots;
     public Slider hpBar;
@@ -26,6 +28,7 @@ public class CombatPopupSetting : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         _statsHandler = GameManager.Instance.Player.GetComponent<StatsHandler>();
         _healthSystem = GameManager.Instance.Player.GetComponent<HealthSystem>();
 
@@ -105,14 +108,5 @@ public class CombatPopupSetting : MonoBehaviour
         }
     }
 
-    public void OnRunBtn()
-    {
-        int dice = Random.Range(0, 10);
-        //if (dice > 8)
-        //{
-        //    return;
-        //}
-        Destroy(gameObject);
-
-    }
+   
 }
