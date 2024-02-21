@@ -61,12 +61,12 @@ public class CombatPopupSetting : MonoBehaviour
     }
     private void RandomGenCard()
     {
-        while (_handList.Count < 4)
+        while (_handList.Count < 3)
         {
             _handList.Add(_CardList[Random.Range(0, _CardList.Count)]);
 
         }
-        for (int j = 0; j < 3; j++)
+        for (int j = 0; j < CardSlots.Length; j++)
         {
             Instantiate(_handList[j], CardSlots[j].transform);
         }

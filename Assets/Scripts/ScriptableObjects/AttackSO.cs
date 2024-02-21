@@ -6,7 +6,7 @@ public class AttackSO : ScriptableObject
 {
     [Header("AttackInfo")]
     public float power;
-    public float speed;
+    public EnumType.AttackRangeType rangeType; 
     public LayerMask target;
 
     
