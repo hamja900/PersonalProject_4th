@@ -19,15 +19,15 @@ public class PlayerInputSystem : CharacterTopDownController
         CallMoveEvent(moveInput);
     }
 
-    //public void OnLook(InputValue value)
-    //{
-    //    Vector2 newAim = value.Get<Vector2>();
-    //    Vector2 worldMousePos = _camera.ScreenToWorldPoint(newAim);
-    //    newAim = (worldMousePos - (Vector2)transform.position).normalized;
+    public void OnLook(InputValue value)
+    {
+        Vector2 newAim = value.Get<Vector2>();
+        Vector2 worldMousePos = _camera.ScreenToWorldPoint(newAim);
+        newAim = (worldMousePos - (Vector2)transform.position).normalized;
 
-    //    if(newAim.magnitude >= 0.9f)
-    //    {
-    //        CallLookEvent(newAim);
-    //    }
-    //}
+        if (newAim.magnitude >= 0.9f)
+        {
+            CallLookEvent(newAim);
+        }
+    }
 }

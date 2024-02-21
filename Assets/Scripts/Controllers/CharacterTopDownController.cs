@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterTopDownController : MonoBehaviour
 {
     public event Action<Vector2> OnMoveEvent;
-    //public event Action<Vector2> OnLookEvent;
+    public event Action<Vector2> OnLookEvent;
     protected StatsHandler statsHandler { get; private set; }
     protected virtual void Awake()
     {
@@ -16,8 +16,8 @@ public class CharacterTopDownController : MonoBehaviour
     {
         OnMoveEvent?.Invoke(dir);
     }
-    //public void CallLookEvent(Vector2 dir)
-    //{
-    //    OnLookEvent?.Invoke(dir);
-    //}
+    public void CallLookEvent(Vector2 dir)
+    {
+        OnLookEvent?.Invoke(dir);
+    }
 }
