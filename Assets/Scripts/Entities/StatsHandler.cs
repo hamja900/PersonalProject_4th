@@ -16,12 +16,7 @@ public class StatsHandler : MonoBehaviour
 
     private void UpdateCharacterStats()
     {
-        AttackSO attackSO = null;
-        if(baseStats.attackSO != null)
-        {
-            attackSO = Instantiate(baseStats.attackSO);
-        }
-        CurrentStats = new CharacterStat { attackSO = attackSO };
+        CurrentStats = new CharacterStat();
         CurrentStats.statsChangedType = baseStats.statsChangedType;
         CurrentStats.maxHP = baseStats.maxHP;
         CurrentStats.maxMP = baseStats.maxMP;

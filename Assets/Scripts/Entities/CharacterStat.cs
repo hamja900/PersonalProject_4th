@@ -11,6 +11,5 @@ public class CharacterStat
     [Range(1f, 20f)] public float speed;
     public int maxHP;
     public int maxMP;
-    public AttackSO attackSO;
   
 }

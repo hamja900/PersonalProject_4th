@@ -289,6 +289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 4080423814276297039}
+  cover: {fileID: 1122629832811897121, guid: 479a3097c13eee44c8b7ead373541938, type: 3}
+  attackSO: []
 --- !u!61 &-3489644627989581602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -402,7 +404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db0924362d32adf42816ebe97b019771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: []
 --- !u!1 &5760449192571680585
 GameObject:
   m_ObjectHideFlags: 0

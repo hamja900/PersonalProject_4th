@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
 
 
-    public bool isEnemySelectTurn = false ;
+    public bool isEnemySelectMode = false ;
 
     private void Awake()
     {
