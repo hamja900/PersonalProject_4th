@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public HealthSystem healthSystem;
     public GameObject Player;
-    
+
+
+    public bool isEnemySelectTurn = false ;
 
     private void Awake()
     {

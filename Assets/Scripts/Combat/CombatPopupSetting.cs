@@ -38,7 +38,7 @@ public class CombatPopupSetting : MonoBehaviour
     {
         ResetPopup();
         RandomGenEnemy();
-        RandomGenCard();
+        
         HpBar();
         MpBar();
         PlayerTurn();
@@ -92,10 +92,10 @@ public class CombatPopupSetting : MonoBehaviour
     {
         _healthSystem.ChangeHealth(-enemyAttackSO.power);
     }
-
     private void PlayerTurn()
     {
-        EnemyTurn();
+        RandomGenCard();
+        //EnemyTurn();
     }
 
     private void EnemyTurn()
@@ -106,7 +106,19 @@ public class CombatPopupSetting : MonoBehaviour
             HpBar();
             Thread.Sleep(100);
         }
+        PlayerTurn();
     }
 
-   
+    public void OnRunBtn()
+    {
+        int dice = Random.Range(0, 10);
+        //if (dice > 8)
+        //{
+        //    return;
+        //}
+        Destroy(gameObject);
+
+    }
+
+
 }

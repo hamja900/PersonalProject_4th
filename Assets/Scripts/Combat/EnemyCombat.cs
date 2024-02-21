@@ -18,6 +18,11 @@ public class EnemyCombat : MonoBehaviour
 
     private void Start()
     {
+       UpdateEnemyHP();
+    }
+
+    public void UpdateEnemyHP()
+    {
         enemyHpBar.value = _healthSystem.CurrentHealth / _statsHandler.CurrentStats.maxHP;
     }
 
