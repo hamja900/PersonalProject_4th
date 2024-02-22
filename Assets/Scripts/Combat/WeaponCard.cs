@@ -51,6 +51,7 @@ public class WeaponCard : MonoBehaviour
                 _enemyHealth2.ChangeHealth(attackSO.power);
                 break;
         }
+        CombatPopupSetting.Instance.enemyHPBar.UpdateEnemyHP();
     }
 
    
