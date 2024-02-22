@@ -923,6 +923,8 @@ MonoBehaviour:
   enemyAttackSO: {fileID: 11400000, guid: aace373a9f8e2344c8c169360d27af2f, type: 2}
   cardAttackSO:
   - {fileID: 11400000, guid: 668b1de569d0ce04fbd2a23c533adee1, type: 2}
+  - {fileID: 11400000, guid: cfc797320caad4249b7cee0e86726295, type: 2}
+  - {fileID: 11400000, guid: 4a068fec86614bc4981e6d940f9d4006, type: 2}
 --- !u!1 &7341976682045381048
 GameObject:
   m_ObjectHideFlags: 0

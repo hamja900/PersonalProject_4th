@@ -15,6 +15,9 @@ public class CombatPopupSetting : MonoBehaviour
     public Slider mpBar;
     private StatsHandler _statsHandler;
     private HealthSystem _healthSystem;
+    public HealthSystem enemyHS;
+    public EnemyCombat enemyHPBar;
+    public WeaponCard cardScript;
      
 
     public List<GameObject> _enemyList = new List<GameObject>();
@@ -31,7 +34,6 @@ public class CombatPopupSetting : MonoBehaviour
         Instance = this;
         _statsHandler = GameManager.Instance.Player.GetComponent<StatsHandler>();
         _healthSystem = GameManager.Instance.Player.GetComponent<HealthSystem>();
-
     }
     // Start is called before the first frame update
     void Start()
@@ -56,19 +58,22 @@ public class CombatPopupSetting : MonoBehaviour
 
         for (int j = 0; j < _curEnemyList.Count; j++)
         {
-            Instantiate(_curEnemyList[j], enemySlots[j].transform);
+            GameObject enemyGo = Instantiate(_curEnemyList[j], enemySlots[j].transform);
+            enemyHS = enemyGo.GetComponent<HealthSystem>();
+            enemyHPBar = enemyGo.GetComponent<EnemyCombat>();
+            
         }
     }
-    private void RandomGenCard()
+    public void RandomGenCard()
     {
         while (_handList.Count < 3)
         {
             _handList.Add(_CardList[Random.Range(0, _CardList.Count)]);
-
         }
         for (int j = 0; j < CardSlots.Length; j++)
         {
-            Instantiate(_handList[j], CardSlots[j].transform);
+            GameObject cardGo = Instantiate(_handList[j], CardSlots[j].transform);
+            cardScript = cardGo.GetComponent<WeaponCard>();
         }
     }
 

@@ -12,9 +12,9 @@ public class WeaponCard : MonoBehaviour
     public AttackSO attackSO;
     private Collider2D _collider;
 
+
     private void Awake()
     {
-        
         _collider = GetComponent<Collider2D>();
     }
 
@@ -33,20 +33,9 @@ public class WeaponCard : MonoBehaviour
 
     private void OnMouseDown()
     {
-        switch (attackSO.name)
-        {
-            case "Knife":
-                break;
-            case "LongSword":
-                break;
-            case "Wand":
-                {
-                    GameManager.Instance.isWandAttack = true;
-                    IntoSelectMode();
-                }
-                break;
-        }
-        
+        CombatPopupSetting.Instance.enemyHS.ChangeHealth(attackSO.power);
+        CombatPopupSetting.Instance.enemyHPBar.UpdateEnemyHP();
+
     }
 
     private void IntoSelectMode()
@@ -67,12 +56,12 @@ public class WeaponCard : MonoBehaviour
         }
         else
         {
+
             GameObject.Find("Cover").SetActive(false);
         }
     }
 
 
 
-   
 
 }
