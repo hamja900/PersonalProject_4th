@@ -443,11 +443,10 @@ GameObject:
   - component: {fileID: 5441609008456230338}
   - component: {fileID: 3495517918558959301}
   - component: {fileID: 6858475400364775595}
-  - component: {fileID: 109486904586613419}
   - component: {fileID: -6443784951531960696}
   m_Layer: 5
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -504,7 +503,6 @@ MonoBehaviour:
     speed: 0
     maxHP: 15
     maxMP: 0
-    attackSO: {fileID: 11400000, guid: aace373a9f8e2344c8c169360d27af2f, type: 2}
   stastsModifier: []
 --- !u!114 &6858475400364775595
 MonoBehaviour:
@@ -518,20 +516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee63a4e5195772342aad28b31950cc46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointArrow: {fileID: 6135045616718068168}
   enemyHpBar: {fileID: 8115044933946897681}
---- !u!114 &109486904586613419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9149535509178419258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b823aff29032d2440acc063dc2281d2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Arrow: {fileID: 6135045616718068168}
 --- !u!61 &-6443784951531960696
 BoxCollider2D:
   m_ObjectHideFlags: 0

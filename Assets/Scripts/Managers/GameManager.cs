@@ -7,9 +7,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public HealthSystem healthSystem;
     public GameObject Player;
-
+    public GameObject[] weaponCards;
 
     public bool isEnemySelectMode = false ;
+    public bool isWandAttack=false ;
 
     private void Awake()
     {

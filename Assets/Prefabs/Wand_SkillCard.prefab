@@ -443,7 +443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 6530399416115092736}
   cover: {fileID: 1122629832811897121, guid: 479a3097c13eee44c8b7ead373541938, type: 3}
-  attackSO: []
+  attackSO: {fileID: 11400000, guid: 4a068fec86614bc4981e6d940f9d4006, type: 2}
 --- !u!61 &-8625072352000402795
 BoxCollider2D:
   m_ObjectHideFlags: 0
