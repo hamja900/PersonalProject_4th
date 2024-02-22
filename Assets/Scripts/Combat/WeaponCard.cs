@@ -10,12 +10,16 @@ public class WeaponCard : MonoBehaviour
     public GameObject card;
     public GameObject cover;
     public AttackSO attackSO;
-    private Collider2D _collider;
+    private HealthSystem _enemyHealth0;
+    private HealthSystem _enemyHealth1;
+    private HealthSystem _enemyHealth2;
 
 
     private void Awake()
     {
-        _collider = GetComponent<Collider2D>();
+        _enemyHealth0 = GameObject.Find("EnemySlot").GetComponentInChildren<HealthSystem>();
+        _enemyHealth1 = GameObject.Find("EnemySlot1").GetComponentInChildren<HealthSystem>();
+        _enemyHealth2 = GameObject.Find("EnemySlot2").GetComponentInChildren<HealthSystem>();
     }
 
     private void OnMouseEnter()
@@ -33,34 +37,23 @@ public class WeaponCard : MonoBehaviour
 
     private void OnMouseDown()
     {
-        CombatPopupSetting.Instance.enemyHS.ChangeHealth(attackSO.power);
-        CombatPopupSetting.Instance.enemyHPBar.UpdateEnemyHP();
+        int dice = Random.Range(0, CombatPopupSetting.Instance._curEnemyList.Count);
 
-    }
-
-    private void IntoSelectMode()
-    {
-
-        GameManager.Instance.isEnemySelectMode = true;
-        _collider.enabled = false;
-        if (GameManager.Instance.isEnemySelectMode == true)
+        switch(dice)
         {
-            if (GameObject.Find("Cover") == null)
-            {
-                Instantiate(cover, GameObject.Find("CardBox").transform);
-            }
-            else
-            {
-                GameObject.Find("Cover").SetActive(true);
-            }
-        }
-        else
-        {
-
-            GameObject.Find("Cover").SetActive(false);
+            case 0:
+                _enemyHealth0.ChangeHealth(attackSO.power);
+                break;
+            case 1:
+                _enemyHealth1.ChangeHealth(attackSO.power);
+                break; 
+            case 2:
+                _enemyHealth2.ChangeHealth(attackSO.power);
+                break;
         }
     }
 
+   
 
 
 

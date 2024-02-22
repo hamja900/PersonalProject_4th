@@ -26,6 +26,8 @@ public class EnemyCombat : MonoBehaviour
        UpdateEnemyHP();
     }
 
+    
+
     public void UpdateEnemyHP()
     {
         enemyHpBar.value = _healthSystem.CurrentHealth / _statsHandler.CurrentStats.maxHP;
