@@ -45,6 +45,7 @@ public class WeaponCard : MonoBehaviour
         _collider.enabled = false;
         if (GameManager.Instance.isEnemySelectMode == true)
         {
+<<<<<<< Updated upstream
             if (GameObject.Find("Cover") == null)
             {
                 Instantiate(cover, GameObject.Find("CardBox").transform);
@@ -58,7 +59,20 @@ public class WeaponCard : MonoBehaviour
         {
 
             GameObject.Find("Cover").SetActive(false);
+=======
+            case 0:
+                _enemyHealth0.ChangeHealth(-attackSO.power);
+                break;
+            case 1:
+                _enemyHealth1.ChangeHealth(-attackSO.power);
+                break; 
+            case 2:
+                _enemyHealth2.ChangeHealth(-attackSO.power);
+                break;
+>>>>>>> Stashed changes
         }
+
+        CombatPopupSetting.Instance.enemyCombat.UpdateEnemyHP();
     }
 
 

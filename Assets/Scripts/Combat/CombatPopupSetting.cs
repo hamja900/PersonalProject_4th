@@ -16,6 +16,7 @@ public class CombatPopupSetting : MonoBehaviour
     private StatsHandler _statsHandler;
     private HealthSystem _healthSystem;
     public HealthSystem enemyHS;
+    public EnemyCombat enemyCombat;
     public EnemyCombat enemyHPBar;
     public WeaponCard cardScript;
      
@@ -34,6 +35,7 @@ public class CombatPopupSetting : MonoBehaviour
         Instance = this;
         _statsHandler = GameManager.Instance.Player.GetComponent<StatsHandler>();
         _healthSystem = GameManager.Instance.Player.GetComponent<HealthSystem>();
+        enemyCombat = _enemyList[0].GetComponent<EnemyCombat>();
     }
     // Start is called before the first frame update
     void Start()

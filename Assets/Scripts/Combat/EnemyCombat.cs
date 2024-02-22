@@ -21,7 +21,7 @@ public class EnemyCombat : MonoBehaviour
         _statsHandler = GetComponent<StatsHandler>();
     }
 
-    private void Start()
+    private void Update()
     {
        UpdateEnemyHP();
     }
@@ -31,26 +31,26 @@ public class EnemyCombat : MonoBehaviour
         enemyHpBar.value = _healthSystem.CurrentHealth / _statsHandler.CurrentStats.maxHP;
     }
 
-    private void OnMouseEnter()
-    {
-        if(GameManager.Instance.isEnemySelectMode)
-        {
-            if (GameManager.Instance.isWandAttack)
-            {
-            }
-            pointArrow.SetActive(true);
-        }
-    }
-    private void OnMouseExit()
-    {
-        if(GameManager.Instance.isEnemySelectMode)
-        {
-            if (GameManager.Instance.isWandAttack)
-            {
-            }
-            pointArrow?.SetActive(false);
-        }
-    }
+    //private void OnMouseEnter()
+    //{
+    //    if(GameManager.Instance.isEnemySelectMode)
+    //    {
+    //        if (GameManager.Instance.isWandAttack)
+    //        {
+    //        }
+    //        pointArrow.SetActive(true);
+    //    }
+    //}
+    //private void OnMouseExit()
+    //{
+    //    if(GameManager.Instance.isEnemySelectMode)
+    //    {
+    //        if (GameManager.Instance.isWandAttack)
+    //        {
+    //        }
+    //        pointArrow?.SetActive(false);
+    //    }
+    //}
     //private void OnMouseDown()
     //{
     //    if(GameManager.Instance.isEnemySelectMode)
